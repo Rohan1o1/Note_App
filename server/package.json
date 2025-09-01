@@ -18,7 +18,8 @@
     "mongodb": "^6.19.0",
     "mongoose": "^8.18.0",
     "nodemailer": "^7.0.6"
-  },
+    },
+    "ts-node-dev": "^2.0.0",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.19",
@@ -26,7 +27,6 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.3.0",
     "@types/nodemailer": "^7.0.1",
-    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
   }
 }
