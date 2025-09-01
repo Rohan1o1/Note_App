@@ -14,7 +14,6 @@ api.interceptors.request.use((config) => {
 });
 
 export default api;
-api.ts
 // import axios from "axios";   // no spaces before this line
 
 // const USE_MOCK = true; // 🔹 toggle mock mode
