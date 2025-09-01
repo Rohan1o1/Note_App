@@ -5,11 +5,13 @@ import Login from "./pages/Login";
 import VerifyLogin from "./pages/VerifyLogin";
 import Dashboard from "./pages/Dashboard";
 
+import { Navigate } from "react-router-dom";
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/verify-signup" element={<VerifySignup />} />
         <Route path="/login" element={<Login />} />
