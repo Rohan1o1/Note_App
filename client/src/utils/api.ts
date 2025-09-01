@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api", // change when deploying
+  baseURL: "https://note-app-2-ykdb.onrender.com/api", // Render backend URL for deployment
 });
 
 // Add JWT automatically
