@@ -3,3 +3,6 @@
 
 # # Add other ignored files or folders here, such as:
 /node_modules
+
+# Ensure .env is ignored in server/.gitignore
+.env

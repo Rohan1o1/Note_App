@@ -1,30 +1,22 @@
-import { useState } from "react";
-import Input from "../components/Input";
-import Button from "../components/Button";
-import api from "../utils/api";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
-const Signup = () => {
-  const [name, setName] = useState("");
-  const [dob, setDob] = useState("");
-  const [email, setEmail] = useState("");
-  const navigate = useNavigate();
+interface Props {
+  note: { _id: string; content: string };
+  onDelete: (id: string) => void;
+}
 
-  const handleSubmit = async () => {
-    await api.post("/auth/signup", { name, dob, email });
-    localStorage.setItem("tempUser", JSON.stringify({ name, dob, email }));
-    navigate("/verify-signup");
-  };
-
+const NoteCard: React.FC<Props> = ({ note, onDelete }) => {
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded-md shadow-md">
-      <h2 className="text-xl font-bold mb-4">Sign Up</h2>
-      <Input label="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <Input label="Date of Birth" type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
-      <Input label="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <Button text="Get OTP" onClick={handleSubmit} />
+    <div className="flex justify-between items-center border p-2 rounded-md mb-2">
+      <p>{note.content}</p>
+      <button
+        onClick={() => onDelete(note._id)}
+        className="text-red-500 hover:text-red-700"
+      >
+        ✕
+      </button>
     </div>
   );
 };
 
-export default Signup;
+export default NoteCard;
